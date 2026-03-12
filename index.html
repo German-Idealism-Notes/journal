@@ -6,15 +6,23 @@
 <style>
 body{
     font-family:serif;
-    max-width:800px;
-    margin:40px auto;
-    padding:0 20px;
+    margin:0;
+    padding:40px 20px;
     line-height:1.6;
     color:#222;
-    /* 新增背景代码 ↓ */
+    /* 页面背景 */
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    background-attachment: fixed; /* 背景固定，滚动页面时不跟随移动 */
-    min-height: 100vh; /* 让背景铺满整个页面高度 */
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+/* 新增内容容器样式 */
+.content-container{
+    max-width:800px;
+    margin:0 auto;
+    padding:0 20px 20px;
+    background-color: white; /* 内容区白色背景 */
+    border-radius: 8px; /* 圆角更美观 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 轻微阴影增强层次感 */
 }
 h1{border-bottom:1px solid #ccc;padding-bottom:10px;font-weight:bold;}
 .nav{margin:20px 0;}
@@ -24,30 +32,33 @@ h1{border-bottom:1px solid #ccc;padding-bottom:10px;font-weight:bold;}
 </style>
 </head>
 <body>
-<h1>German Idealism Notes</h1>
+<!-- 新增内容容器 -->
+<div class="content-container">
+  <h1>German Idealism Notes</h1>
 
-<div class="nav">
-  <a href="#">Home</a>
-  <a href="#about">About</a>
-  <a href="#issues">Issues</a>
-  <a href="#submission">Submission</a>
-</div>
+  <div class="nav">
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#issues">Issues</a>
+    <a href="#submission">Submission</a>
+  </div>
 
-<div class="mission">
-German Idealism Notes serves as a communication platform for researchers of German Classical Philosophy and promotes sincere academic exploration.
-</div>
+  <div class="mission">
+  German Idealism Notes serves as a communication platform for researchers of German Classical Philosophy and promotes sincere academic exploration.
+  </div>
 
-<h2 id="about">About</h2>
-<p>A modest independent academic journal dedicated to German Idealism.</p>
+  <h2 id="about">About</h2>
+  <p>A modest independent academic journal dedicated to German Idealism.</p>
 
-<h2 id="issues">Issues</h2>
-<p>Issue 1 (2026) — coming soon</p>
+  <h2 id="issues">Issues</h2>
+  <p>Issue 1 (2026) — coming soon</p>
 
-<h2 id="submission">Submission</h2>
-<p>Please send your manuscript to: <strong>nhcyjhy@163.com</strong></p>
+  <h2 id="submission">Submission</h2>
+  <p>Please send your manuscript to: <strong>nhcyjhy@163.com</strong></p>
 
-<div class="disclaimer">
-Independent academic platform • Non-official • For academic exchange only
+  <div class="disclaimer">
+  Independent academic platform • Non-official • For academic exchange only
+  </div>
 </div>
 </body>
 </html>
