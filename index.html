@@ -1,64 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" data-theme="light">
 <head>
 <meta charset="UTF-8">
-<title>German Idealism Notes</title>
-<style>
-body{
-    font-family:serif;
-    margin:0;
-    padding:40px 20px;
-    line-height:1.6;
-    color:#222;
-    /* 页面背景 */
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    background-attachment: fixed;
-    min-height: 100vh;
-}
-/* 新增内容容器样式 */
-.content-container{
-    max-width:800px;
-    margin:0 auto;
-    padding:0 20px 20px;
-    background-color: white; /* 内容区白色背景 */
-    border-radius: 8px; /* 圆角更美观 */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 轻微阴影增强层次感 */
-}
-h1{border-bottom:1px solid #ccc;padding-bottom:10px;font-weight:bold;}
-.nav{margin:20px 0;}
-.nav a{margin-right:20px;text-decoration:none;color:#222;}
-.mission{margin:30px 0;font-size:16px;}
-.disclaimer{margin-top:60px;font-size:12px;color:#666;}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="German Idealism Notes — 德国古典哲学独立学术期刊 | An independent academic journal dedicated to German Idealism">
+<meta name="keywords" content="German Idealism, Kant, Hegel, Fichte, Schelling, 德国古典哲学, 康德, 黑格尔, 费希特, 谢林, academic journal">
+<meta property="og:title" content="German Idealism Notes">
+<meta property="og:description" content="德国古典哲学独立学术期刊 · Independent Academic Journal for German Idealism">
+<meta property="og:type" content="website">
+<title>German Idealism Notes — 德国古典哲学期刊</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- 新增内容容器 -->
-<div class="content-container">
-  <h1>German Idealism Notes</h1>
 
-  <div class="nav">
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#issues">Issues</a>
-    <a href="#submission">Submission</a>
+<!-- ==================== Header ==================== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-title">German <span>Idealism</span> Notes</a>
+    <button class="hamburger" id="hamburger" aria-label="菜单" aria-expanded="false">☰</button>
+    <nav class="site-nav" id="site-nav">
+      <a href="index.html" class="active">首页</a>
+      <a href="issues.html">卷期</a>
+      <a href="about.html">关于</a>
+      <a href="submission.html">投稿</a>
+      <a href="contact.html">联系</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="切换暗色模式">🌙</button>
+    </nav>
   </div>
+</header>
 
-  <div class="mission">
-  German Idealism Notes serves as a communication platform for researchers of German Classical Philosophy and promotes sincere academic exploration.
+<!-- ==================== Hero ==================== -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>German <span>Idealism</span> Notes</h1>
+    <p class="subtitle">
+      German Idealism Notes serves as a communication platform for researchers of German Classical Philosophy and promotes sincere academic exploration.
+    </p>
+    <div class="hero-actions">
+      <a href="issue-1.html" class="btn btn-primary">📖 阅读最新卷期</a>
+      <a href="submission.html" class="btn btn-outline">📝 投稿指南</a>
+    </div>
   </div>
+</section>
 
-  <h2 id="about">About</h2>
-  <p>A modest independent academic journal dedicated to German Idealism.</p>
+<!-- ==================== Main ==================== -->
+<main class="main-content">
 
-  <h2 id="issues">Issues</h2>
-  <p>Issue 1 (2026) — coming soon</p>
+  <!-- 最新卷期 -->
+  <section>
+    <h2 class="section-title"><span>最新</span>卷期</h2>
+    <div class="card issue-card">
+      <div class="issue-number">
+        Vol 1<br><small>2026</small>
+      </div>
+      <div class="issue-info">
+        <h3><a href="issue-1.html">创刊号 · Volume 1 (2026)</a></h3>
+        <p class="meta">收录 5 篇论文 · 2026 年 6 月出版</p>
+        <p class="abstract">聚焦德国古典哲学的核心问题，涵盖康德、黑格尔、费希特、谢林等关键思想家。本期刊致力于为德国古典哲学研究者提供一个真诚的学术交流平台。</p>
+        <a href="issue-1.html" class="btn-link">浏览全部论文 →</a>
+      </div>
+    </div>
+  </section>
 
-  <h2 id="submission">Submission</h2>
-  <p>Please send your manuscript to: <strong>nhcyjhy@163.com</strong></p>
+  <!-- 精选论文 -->
+  <section>
+    <h2 class="section-title"><span>精选</span>论文</h2>
 
-  <div class="disclaimer">
-  Independent academic platform • Non-official • For academic exchange only
+    <div class="card">
+      <h3><a href="issue-1.html">康德先验演绎中的统觉统一性问题</a></h3>
+      <p class="meta">张明远 · 第 1–26 页</p>
+      <p class="abstract">本文重新审视了康德《纯粹理性批判》中先验演绎的B版论证，聚焦于统觉的先验统一性如何使经验成为可能。文章论证了统觉统一性并非一种形式逻辑上的同一性，而是一种先验综合的统一性——它构成了对象意识的规范性条件。</p>
+      <div>
+        <span class="tag">康德</span><span class="tag">先验演绎</span><span class="tag">统觉</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><a href="issue-1.html">黑格尔《精神现象学》中的"承认"概念与主体间性</a></h3>
+      <p class="meta">李思哲 · 第 27–52 页</p>
+      <p class="abstract">本文探讨了黑格尔《精神现象学》第四章中"主奴辩证法"所揭示的承认结构。文章认为黑格尔的承认概念超越了霍耐特式的社会理论解读，其核心在于揭示自我意识在遭遇另一个自我意识时所经历的辩证运动。</p>
+      <div>
+        <span class="tag">黑格尔</span><span class="tag">精神现象学</span><span class="tag">承认</span><span class="tag">主体间性</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><a href="issue-1.html">费希特知识学中的"事实行动"（Tathandlung）与自我设定</a></h3>
+      <p class="meta">王哲宇 · 第 53–78 页</p>
+      <p class="abstract">费希特在《全部知识学的基础》（1794）中提出的"事实行动"概念是其知识学第一原理的核心。本文追溯了这一概念的形成过程，并将其定位为对康德先验统觉学说的激进发展。</p>
+      <div>
+        <span class="tag">费希特</span><span class="tag">事实行动</span><span class="tag">知识学</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 快速链接 -->
+  <section>
+    <h2 class="section-title"><span>快速</span>链接</h2>
+    <div class="quick-links">
+      <a href="issues.html" class="quick-link-card">
+        <div class="icon">📚</div>
+        <div class="label">所有卷期</div>
+        <div class="desc">浏览全部出版卷期</div>
+      </a>
+      <a href="about.html" class="quick-link-card">
+        <div class="icon">🏛️</div>
+        <div class="label">关于期刊</div>
+        <div class="desc">了解编辑方针与使命</div>
+      </a>
+      <a href="submission.html" class="quick-link-card">
+        <div class="icon">📝</div>
+        <div class="label">投稿指南</div>
+        <div class="desc">提交您的论文</div>
+      </a>
+      <a href="contact.html" class="quick-link-card">
+        <div class="icon">✉️</div>
+        <div class="label">联系我们</div>
+        <div class="desc">编辑部联系方式</div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==================== Footer ==================== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 German Idealism Notes · 独立学术平台 · 仅供学术交流</span>
+    <div class="footer-links">
+      <a href="about.html">关于</a>
+      <a href="submission.html">投稿</a>
+      <a href="contact.html">联系</a>
+    </div>
   </div>
-</div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="回到顶部" title="回到顶部">↑</button>
+
+<script src="js/main.js"></script>
 </body>
 </html>

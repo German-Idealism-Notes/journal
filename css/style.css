@@ -1,0 +1,1020 @@
+/* ============================================
+   German Idealism Notes — 全局样式
+   学术期刊风格 · 响应式 · 暗色模式
+   ============================================ */
+
+/* ---------- CSS 变量 (亮色默认) ---------- */
+:root {
+  --color-primary: #002b5c;
+  --color-primary-light: #004080;
+  --color-bg: #f0f2f5;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f8f9fa;
+  --color-text: #2c2c2c;
+  --color-text-secondary: #555555;
+  --color-text-muted: #777777;
+  --color-link: #005293;
+  --color-link-hover: #003566;
+  --color-accent: #c8a44e;
+  --color-accent-light: #e8d5a3;
+  --color-border: #dde1e6;
+  --color-divider: #eaeaea;
+  --color-tag-bg: #e8f0f8;
+  --color-tag-text: #004080;
+  --color-code-bg: #f4f5f6;
+  --color-header-bg: #002b5c;
+  --color-header-text: #ffffff;
+  --color-footer-bg: #1c2836;
+  --color-footer-text: #b0b8c1;
+  --color-overlay: rgba(0, 0, 0, 0.04);
+  --color-hero-bg: linear-gradient(135deg, #002b5c 0%, #003d7a 40%, #1a4a6e 100%);
+  --color-shadow: rgba(0, 0, 0, 0.08);
+  --color-shadow-lg: rgba(0, 0, 0, 0.12);
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --transition: 0.2s ease;
+}
+
+/* ---------- CSS 变量 (暗色模式) ---------- */
+html[data-theme="dark"] {
+  --color-primary: #1e3a5f;
+  --color-primary-light: #2a5080;
+  --color-bg: #0f0f1a;
+  --color-surface: #1a1a2e;
+  --color-surface-hover: #22223a;
+  --color-text: #d0d0d8;
+  --color-text-secondary: #a0a0b0;
+  --color-text-muted: #787888;
+  --color-link: #7ab8e0;
+  --color-link-hover: #a3d4f5;
+  --color-accent: #d4af37;
+  --color-accent-light: #5a4a20;
+  --color-border: #2a2a40;
+  --color-divider: #2a2a40;
+  --color-tag-bg: #1e3050;
+  --color-tag-text: #8ab8d8;
+  --color-code-bg: #232338;
+  --color-header-bg: #111122;
+  --color-header-text: #e0e0e8;
+  --color-footer-bg: #0a0a16;
+  --color-footer-text: #808090;
+  --color-overlay: rgba(255, 255, 255, 0.02);
+  --color-hero-bg: linear-gradient(135deg, #0a0a20 0%, #12122e 40%, #0d1a2d 100%);
+  --color-shadow: rgba(0, 0, 0, 0.4);
+  --color-shadow-lg: rgba(0, 0, 0, 0.6);
+}
+
+/* ============================================
+   Reset & Base
+   ============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, "Times New Roman", serif;
+  line-height: 1.75;
+  color: var(--color-text);
+  background: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 确保 body 填满视口 */
+body > * {
+  flex-shrink: 0;
+}
+
+body > main {
+  flex: 1 0 auto;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.5em;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4 {
+  color: #c8d8e8;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; margin-top: 2rem; }
+h3 { font-size: 1.2rem; margin-top: 1.5rem; }
+
+p { margin-bottom: 1em; }
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+/* ============================================
+   Header
+   ============================================ */
+
+.site-header {
+  background: var(--color-header-bg);
+  color: var(--color-header-text);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 4px var(--color-shadow);
+  transition: background-color 0.3s ease;
+}
+
+.header-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 60px;
+}
+
+.site-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-header-text);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.site-title:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.site-title span {
+  color: var(--color-accent);
+}
+
+/* 导航 */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.site-nav a {
+  color: rgba(255, 255, 255, 0.85);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transition: background-color var(--transition), color var(--transition);
+  white-space: nowrap;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.site-nav a.active {
+  background: rgba(255, 255, 255, 0.18);
+  font-weight: 600;
+}
+
+/* 暗色模式切换按钮 */
+.theme-toggle {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  margin-left: 8px;
+  line-height: 1;
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* 汉堡菜单按钮 */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-header-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 6px;
+  line-height: 1;
+}
+
+/* ============================================
+   Main Content
+   ============================================ */
+
+.main-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  width: 100%;
+}
+
+/* 主页 hero 是全宽的 */
+.hero {
+  background: var(--color-hero-bg);
+  color: #ffffff;
+  padding: 64px 24px;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  color: #ffffff;
+  font-size: 2.4rem;
+  margin-bottom: 0.3em;
+  letter-spacing: 0.5px;
+}
+
+html[data-theme="dark"] .hero h1 {
+  color: #e8e8f0;
+}
+
+.hero h1 span {
+  color: var(--color-accent);
+}
+
+.hero .subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+  margin-bottom: 1.5em;
+  line-height: 1.6;
+}
+
+html[data-theme="dark"] .hero .subtitle {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero .hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition);
+  border: 2px solid transparent;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #1a1a1a;
+  border-color: var(--color-accent);
+}
+
+.btn-primary:hover {
+  background: #d4af37;
+  color: #0a0a0a;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--color-link);
+  padding: 4px 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-link:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+/* ============================================
+   Cards
+   ============================================ */
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: box-shadow var(--transition), background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 2px 12px var(--color-shadow);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+.card .meta {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.8em;
+}
+
+.card .abstract {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+/* 卷期卡片 */
+.issue-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.issue-card .issue-number {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  background: var(--color-primary);
+  color: #ffffff;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.1;
+}
+
+.issue-card .issue-number small {
+  font-size: 0.65rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.issue-card .issue-info {
+  flex: 1;
+}
+
+.issue-card .issue-info h3 {
+  margin: 0 0 4px;
+}
+
+/* ============================================
+   Article Table
+   ============================================ */
+
+.article-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.article-table th,
+.article-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.article-table th {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  position: sticky;
+  top: 60px;
+  z-index: 2;
+}
+
+.article-table tbody tr {
+  transition: background-color var(--transition);
+}
+
+.article-table tbody tr:hover {
+  background: var(--color-surface-hover);
+}
+
+.article-table .num {
+  width: 40px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.article-table .title-col {
+  font-weight: 600;
+}
+
+.article-table .title-col a {
+  color: var(--color-text);
+}
+
+.article-table .title-col a:hover {
+  color: var(--color-link);
+}
+
+.article-table .authors-col {
+  color: var(--color-text-secondary);
+  font-size: 0.92rem;
+}
+
+.article-table .pages-col {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+.article-table .abstract-row td {
+  padding: 0 16px 16px;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.abstract-toggle {
+  cursor: pointer;
+  color: var(--color-link);
+  font-size: 0.85rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.abstract-toggle:hover {
+  color: var(--color-link-hover);
+}
+
+.abstract-content {
+  font-size: 0.93rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  padding: 12px 0 4px;
+  border-top: 1px dashed var(--color-divider);
+  margin-top: 8px;
+}
+
+/* ============================================
+   Tags / Keywords
+   ============================================ */
+
+.tag {
+  display: inline-block;
+  background: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 2px 4px 2px 0;
+}
+
+/* ============================================
+   Section styling
+   ============================================ */
+
+.section-title {
+  font-size: 1.6rem;
+  border-left: 4px solid var(--color-accent);
+  padding-left: 16px;
+  margin-bottom: 1.2em;
+}
+
+.section-title span {
+  color: var(--color-accent);
+}
+
+/* ============================================
+   Breadcrumb
+   ============================================ */
+
+.breadcrumb {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+}
+
+.breadcrumb a {
+  color: var(--color-text-muted);
+}
+
+.breadcrumb a:hover {
+  color: var(--color-link);
+}
+
+.breadcrumb span {
+  margin: 0 8px;
+}
+
+/* ============================================
+   Issue Header
+   ============================================ */
+
+.issue-header {
+  text-align: center;
+  padding: 32px 0 16px;
+}
+
+.issue-header .vol-badge {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 8px 24px;
+  border-radius: 999px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8em;
+}
+
+.issue-header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.issue-header .issue-date {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin-top: 0.5em;
+}
+
+/* ============================================
+   Quick Links Section (首页)
+   ============================================ */
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.quick-link-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  transition: all var(--transition);
+}
+
+.quick-link-card:hover {
+  box-shadow: 0 4px 16px var(--color-shadow);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.quick-link-card .icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.quick-link-card .label {
+  font-weight: 600;
+  color: var(--color-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.quick-link-card .desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.site-footer {
+  background: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  padding: 32px 24px;
+  font-size: 0.88rem;
+  transition: background-color 0.3s ease;
+}
+
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: var(--color-footer-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+/* ============================================
+   Back to Top
+   ============================================ */
+
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 42px;
+  height: 42px;
+  background: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--color-shadow-lg);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: var(--color-primary-light);
+}
+
+/* ============================================
+   Submission Guidelines
+   ============================================ */
+
+.guidelines dt {
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 1.2em;
+  font-size: 1.05rem;
+}
+
+html[data-theme="dark"] .guidelines dt {
+  color: #c8d8e8;
+}
+
+.guidelines dd {
+  margin-left: 0;
+  margin-top: 0.3em;
+  color: var(--color-text-secondary);
+  padding-left: 16px;
+  border-left: 2px solid var(--color-border);
+}
+
+/* ============================================
+   Editorial Board
+   ============================================ */
+
+.editorial-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.editorial-list li {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.editorial-list .name {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.editorial-list .role {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 600;
+}
+
+.editorial-list .affiliation {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+/* ============================================
+   404 Page
+   ============================================ */
+
+.not-found {
+  text-align: center;
+  padding: 80px 24px;
+}
+
+.not-found .code {
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: 0.2em;
+}
+
+.not-found h2 {
+  margin-top: 0;
+}
+
+.not-found p {
+  color: var(--color-text-secondary);
+  margin-bottom: 2em;
+}
+
+/* ============================================
+   Citation Copy
+   ============================================ */
+
+.cite-block {
+  background: var(--color-code-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin-top: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.copy-btn {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.8rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  float: right;
+  transition: all var(--transition);
+}
+
+.copy-btn:hover {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+.copy-btn.copied {
+  background: #2e7d32;
+  color: #ffffff;
+  border-color: #2e7d32;
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  .site-header,
+  .site-footer,
+  .back-to-top,
+  .theme-toggle,
+  .hamburger,
+  .hero-actions,
+  .quick-links {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+    color: #000000;
+    font-size: 12pt;
+  }
+
+  .main-content {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  a {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #cccccc;
+    break-inside: avoid;
+  }
+}
+
+/* ============================================
+   Responsive: Tablet (640px–1024px)
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero .subtitle {
+    font-size: 1rem;
+  }
+
+  .article-table th,
+  .article-table td {
+    padding: 10px 12px;
+  }
+}
+
+/* ============================================
+   Responsive: Mobile (< 640px)
+   ============================================ */
+
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+
+  /* 汉堡菜单 */
+  .hamburger {
+    display: block;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--color-header-bg);
+    flex-direction: column;
+    padding: 8px 0;
+    box-shadow: 0 4px 12px var(--color-shadow);
+    z-index: 99;
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .site-nav a {
+    padding: 12px 24px;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .theme-toggle {
+    margin-left: 4px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero .hero-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Main */
+  .main-content {
+    padding: 20px 16px 32px;
+  }
+
+  /* Cards */
+  .card {
+    padding: 16px;
+  }
+
+  .issue-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .quick-links {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  /* Table scroll */
+  .article-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .article-table th,
+  .article-table td {
+    padding: 10px 8px;
+    font-size: 0.85rem;
+  }
+
+  /* Editorial */
+  .editorial-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  /* Back to top */
+  .back-to-top {
+    bottom: 16px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
+  }
+}
